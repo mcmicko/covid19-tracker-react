@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
-import styles from "./App.module.css";
+import "./App.css";
 import { Cards, Chart, CountryPicker } from "./components";
 import { fetchData } from "./api";
+import cover1 from "./styling/HomePage.svg";
 
 class App extends Component {
   state = {
@@ -25,7 +25,8 @@ class App extends Component {
   render() {
     const { data, country } = this.state;
     return (
-      <div className={styles.container}>
+      <div className="container">
+        <img className="cover1" src={cover1} alt="cover1" />
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart data={data} country={country} />
